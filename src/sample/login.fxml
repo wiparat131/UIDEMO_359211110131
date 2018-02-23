@@ -42,12 +42,12 @@
                   </Label>
                </children>
             </Pane>
-            <JFXTextField focusColor="#ff6f62" layoutX="389.0" layoutY="87.0" promptText="Username" unFocusColor="#3ed03e">
+            <JFXTextField fx:id="username" focusColor="#ff6f62" layoutX="389.0" layoutY="87.0" promptText="Username" unFocusColor="#3ed03e">
                <font>
                   <Font name="AngsanaUPC Bold" size="25.0" />
                </font>
             </JFXTextField>
-            <JFXTextField focusColor="#e13128" layoutX="389.0" layoutY="172.0" promptText="Password" unFocusColor="#30bc39">
+            <JFXTextField fx:id="password" focusColor="#e13128" layoutX="389.0" layoutY="172.0" promptText="Password" unFocusColor="#30bc39">
                <font>
                   <Font name="AngsanaUPC Bold" size="25.0" />
                </font>
@@ -62,7 +62,7 @@
                   <Image url="@../image/Lock_Unlock-RoundedBlack-512.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="481.0" layoutY="263.0" prefHeight="43.0" prefWidth="76.0" style="-fx-background-color: #f50057;" text="Login">
+            <JFXButton fx:id="btnLogin" layoutX="481.0" layoutY="263.0" prefHeight="43.0" prefWidth="76.0" style="-fx-background-color: #f50057;" text="Login">
                <font>
                   <Font name="CordiaUPC Bold" size="23.0" />
                </font>
@@ -72,7 +72,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="393.0" layoutY="371.0" prefHeight="17.0" prefWidth="190.0" textFill="#cd0909" />
+            <Label fx:id="dbStatus" layoutX="393.0" layoutY="371.0" prefHeight="17.0" prefWidth="190.0" textFill="#cd0909" />
             <Label layoutX="342.0" layoutY="28.0" prefHeight="27.0" prefWidth="237.0" />
          </children>
       </AnchorPane>

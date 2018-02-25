@@ -77,8 +77,9 @@ public class Controller implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }//adminDashboard
 
+    public void setLoginStatus(Label loginStatus) {
+        this.loginStatus = loginStatus;
+    }
 }//class

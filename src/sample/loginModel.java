@@ -23,7 +23,7 @@ public class loginModel {
     public boolean isDatabaseConnection(){
         return this.connection != null;
     }//isDatabaseConnection
-    public boolean isLogin(String user,String pass){
+    public boolean isLogin(String user,String pass) throws SQLException {
         PreparedStatement pr = null;
         ResultSet rs = null;
 

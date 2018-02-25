@@ -1,5 +1,6 @@
 package sample;
 
+import admin.adminController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -32,6 +33,9 @@ public class Controller implements Initializable {
         @FXML
         private Label dbStatus;
 
+        @FXML
+        private Label loginStatus;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (this.loginmodel.isDatabaseConnection()){
@@ -45,56 +49,36 @@ public class Controller implements Initializable {
     public void Login (ActionEvent event){
         try {
             if
-                    (this.loginModel.isLogin(this.username.getText(),this.password.getText(),
-                    this.combobox.getValue().toString())){
+                    (this.loginmodel.isLogin(this.username.getText(),this.password.getText()
+                    )){
                 Stage stage = (Stage) this.btnLogin.getScene().getWindow();
                 stage.close();
-                switch (this.combobox.getValue().toString()){
-                    case "Admin": adminLogin(); break;
-                    case "Student": studentLogin(); break;
-                }
+
             }else{
                 this.loginStatus.setText("Wrong Credential");
             }
         } catch (Exception localException) {
             localException.printStackTrace();
         }
-    }
-    public void studentLogin(){
-        try {
-            Stage userStage = new Stage();
-            FXMLLoader loader = new FXMLLoader();
-            Pane root = (Pane)
-                    loader.load(getClass().getResource("/Students/StudentFXML.fxml").openStream
-                            ());
-            StudentsController studentsController = (StudentsController)
-                    loader.getController();
-            Scene scene = new Scene(root);
-            userStage.setScene(scene);
-            userStage.setTitle("Student Dashboard");
-            userStage.setResizable(false);
-            userStage.show();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-    public void adminLogin(){
+    }//Login
+
+    private void adminDashboard() {
         try {
             Stage adminStage = new Stage();
             FXMLLoader adminLoader = new FXMLLoader();
-            Pane adminroot = (Pane)
-                    adminLoader.load(getClass().getResource("/Admin/Admin.fxml").openStream());
-            AdminController adminController = (AdminController)
-                    adminLoader.getController();
-            Scene scene = new Scene(adminroot);
+            Pane adminRoot = (Pane) adminLoader.load(
+                    getClass().getResource("/admin/adminDashboard.fxml").openStream());
+            adminController adminController = adminLoader.getController();
+            Scene scene = new Scene(adminRoot);
             adminStage.setScene(scene);
             adminStage.setTitle("Admin Dashboard");
             adminStage.setResizable(false);
             adminStage.show();
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    }
-}
+
+
+    }//adminDashboard
 
 }//class

@@ -1,5 +1,6 @@
 package admin;
 
+import com.jfoenix.controls.JFXButton;
 import dbUtil.dbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,55 +29,59 @@ public abstract class adminController implements Initializable{
     private TableView<StudentData> studentTable;
 
     @FXML
-    private TableColumn<StudentData,String> idcolum;
+    private TableColumn<StudentData, String> idcolum;
 
     @FXML
-    private TableColumn<StudentData,String> fistnamecolum;
+    private TableColumn<StudentData, String> firstnamecolum;
 
     @FXML
-    private TableColumn<StudentData,String> lastnamecolum;
+    private TableColumn<StudentData, String> lastnamecolum;
 
     @FXML
-    private TableColumn<StudentData,String> emailcolum;
+    private TableColumn<StudentData, String> emailcolum;
 
     @FXML
-    private TableColumn<StudentData,String> dobcolum;
+    private TableColumn<StudentData, String> dobcolum;
 
     @FXML
-    private Button btnload;
-
+    private JFXButton btnload;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.db = new dbConnection();
-        @FXML
-                private void loadStudentData(ActionEvent event)
-            try {
-                Connection conn = dbConnection.getConnection();
-                this.data = FXCollections.observableArrayList();
-                //sql
-                String sql = "select * form student";
-                ResultSet rs = conn.createStatement().executeQuery(sql);
-                while (rs.next()){
-                    this.data.add(new StudentData(rs.getString(1),
-                            rs.getString(2),
-                            rs.getString(3),
-                            rs.getString(4),
-                            rs.getString(5)));
-                }//while
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            //put data to tableview
-            this.idcolum.setCellValueFactory(new PropertyValueFactory<StudentData,String>("id"));
-            this.fistnamecolum.setCellValueFactory(new PropertyValueFactory<StudentData,String>("fistname"));
-            this.lastnamecolum.setCellValueFactory(new PropertyValueFactory<StudentData,String>("lastname"));
-            this.emailcolum.setCellValueFactory(new PropertyValueFactory<StudentData,String>("email"));
-            this.dobcolum.setCellValueFactory(new PropertyValueFactory<StudentData,String>("DOB"));
-            this.studentTable.setItems(null);
-            this.studentTable.setItems(this.data);
+    }//initialize
+    @FXML
+    private void loadStudentData(ActionEvent event){
+        try {
+            Connection conn = dbConnection.getConnection();
+            this.data = FXCollections.observableArrayList();
+            //sql
+            String sql = "select * from student";
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while (rs.next()) {
+                this.data.add(new StudentData(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5)));
+            }//while
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        //put data to tableview
+        this.idcolum.setCellValueFactory(
+                new PropertyValueFactory<StudentData,String>("id"));
+        this.firstnamecolum.setCellValueFactory(
+                new PropertyValueFactory<StudentData,String>("firstName"));
+        this.lastnamecolum.setCellValueFactory(
+                new PropertyValueFactory<StudentData,String>("lastName"));
+        this.emailcolum.setCellValueFactory(
+                new PropertyValueFactory<StudentData,String>("email"));
+        this.dobcolum.setCellValueFactory(
+                new PropertyValueFactory<StudentData,String>("DOB"));
+        this.studentTable.setItems(null);
+        this.studentTable.setItems(this.data);
 
+    }//loadStudentData
 
-    }
 }//class

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -22,17 +22,17 @@
                         <TableView fx:id="studentTable" layoutX="50.0" layoutY="56.0" prefHeight="216.0" prefWidth="682.0">
                           <columns>
                             <TableColumn fx:id="idcolum" prefWidth="82.0" text="ID" />
-                            <TableColumn fx:id="fistnamecolum" prefWidth="117.0" text="Fistname" />
+                            <TableColumn fx:id="firstnamecolum" prefWidth="117.0" text="Fistname" />
                               <TableColumn fx:id="lastnamecolum" minWidth="0.0" prefWidth="116.0" text="Lastname" />
                               <TableColumn fx:id="emailcolum" minWidth="0.0" prefWidth="206.0" text="Email" />
                               <TableColumn fx:id="dobcolum" prefWidth="160.0" text="Date of Brith" />
                           </columns>
                         </TableView>
-                        <Button fx:id="btnload" layoutX="636.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadStudentData" style="-fx-background-color: #90caf9;" text="Load Data" textFill="#141414">
+                        <JFXButton fx:id="btnload" layoutX="629.0" layoutY="14.0" onAction="#loadStudentData" style="-fx-background-color: #90caf9;" text="Load Data">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
-                        </Button>
+                        </JFXButton>
                      </children>
                   </AnchorPane>
             </content>

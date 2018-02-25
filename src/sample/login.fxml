@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -61,17 +61,17 @@
                   <Image url="@../image/Lock_Unlock-RoundedBlack-512.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btnLogin" layoutX="481.0" layoutY="263.0" prefHeight="43.0" prefWidth="76.0" style="-fx-background-color: #f50057;" text="Login">
+            <JFXButton fx:id="btnLogin" layoutX="488.0" layoutY="263.0" prefHeight="43.0" prefWidth="76.0" style="-fx-background-color: #f50057;" text="Login">
                <font>
                   <Font name="CordiaUPC Bold" size="23.0" />
                </font>
             </JFXButton>
-            <Label layoutX="325.0" layoutY="369.0" text="DB Status :">
+            <Label layoutX="320.0" layoutY="365.0" text="DB Status :">
                <font>
-                  <Font size="13.0" />
+                  <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dbStatus" layoutX="393.0" layoutY="371.0" prefHeight="17.0" prefWidth="190.0" textFill="#cd0909" />
+            <Label fx:id="dbStatus" layoutX="393.0" layoutY="361.0" prefHeight="27.0" prefWidth="190.0" textFill="#cd0909" />
             <Label layoutX="342.0" layoutY="28.0" prefHeight="27.0" prefWidth="237.0" />
          </children>
       </AnchorPane>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -32,12 +32,7 @@
                               <TableColumn fx:id="dobcolum" prefWidth="89.0" text="Date of Brith" />
                           </columns>
                         </TableView>
-                        <JFXButton fx:id="btnload" layoutX="634.0" layoutY="27.0" onAction="#loadStudentData" style="-fx-background-color: #90caf9;" text="Load Data">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </JFXButton>
-                        <TextField fx:id="searchTxt" layoutX="50.0" layoutY="16.0" promptText="Search...." />
+                        <TextField fx:id="searchTxt" layoutX="267.0" layoutY="29.0" prefHeight="25.0" prefWidth="274.0" promptText="Search...." />
                         <VBox layoutX="50.0" layoutY="81.0" prefHeight="151.0" prefWidth="169.0">
                            <children>
                               <JFXTextField fx:id="txtID" text="ID">
@@ -45,12 +40,12 @@
                                     <Font size="18.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="txtfistname" layoutX="10.0" layoutY="10.0" text="Fistname">
+                              <JFXTextField fx:id="txtfistName" layoutX="10.0" layoutY="10.0" text="Fistname">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="txtlastname" layoutX="10.0" layoutY="35.0" text="Lastname">
+                              <JFXTextField fx:id="txtlastName" layoutX="10.0" layoutY="35.0" text="Lastname">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -60,15 +55,14 @@
                                     <Font size="18.0" />
                                  </font>
                               </JFXTextField>
-                              <DatePicker fx:id="txtDOB" />
                            </children>
                         </VBox>
-                        <JFXButton fx:id="btnClear" layoutX="79.0" layoutY="289.0" onAction="#clearForm" style="-fx-background-color: #90caf9;" text="Clear From">
+                        <JFXButton fx:id="btnClear" layoutX="79.0" layoutY="289.0" onAction="#clearForm" style="-fx-background-color: #90caf9;" text="ClearFrom">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnAdd" layoutX="78.0" layoutY="328.0" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: #ea80fc;" text="Add Data">
+                        <JFXButton fx:id="btnAdd" layoutX="78.0" layoutY="328.0" onAction="#addStudent" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: #ea80fc;" text="AddData">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -88,6 +82,9 @@
                               <Font size="18.0" />
                            </font>
                         </JFXButton>
+                        <JFXTextField layoutX="50.0" layoutY="247.0" />
+                        <JFXDatePicker fx:id="txtDOB" layoutX="49.0" layoutY="247.0" promptText="DOB" />
+                        <JFXButton fx:id="btnLoad" layoutX="645.0" layoutY="29.0" onAction="#loadStudentData" style="-fx-background-color: #64dd17;" text="LoadData" />
                      </children>
                   </AnchorPane>
             </content>

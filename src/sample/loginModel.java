@@ -7,10 +7,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class loginModel1 {
+public class loginModel {
     Connection connection;
 
-    public loginModel1() {
+    public loginModel() {
         try {
             this.connection = dbConnection.getConnection();
         } catch (SQLException e) {

@@ -4,15 +4,22 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class StudentData {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     //properties of object
     private final StringProperty id;
     private final StringProperty firstName;
     private final StringProperty lastName;
     private final StringProperty email;
     private final StringProperty DOB;
+<<<<<<< HEAD
     //constructor
 
+=======
+//constructor
+>>>>>>> origin/master
 
     public StudentData(String id,
                        String firstName,
@@ -24,7 +31,12 @@ public class StudentData {
         this.lastName = new SimpleStringProperty(lastName);
         this.email = new SimpleStringProperty(email);
         this.DOB = new SimpleStringProperty(DOB);
+<<<<<<< HEAD
     }//constructor
+=======
+    }//Constructor
+
+>>>>>>> origin/master
     //getter and setter methods
 
     public String getId() {
